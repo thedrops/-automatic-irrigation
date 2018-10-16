@@ -26,8 +26,8 @@
             <td class="center-align"><?php echo $user['nome_cientifico'] ?></td>
             <td class="center-align"><?php echo $user['umidade'] ?></td>
             <td class="center-align"><?php echo $user['temperatura'] ?></td>
-            <td class="center-align"><?php  ?></td>
-            <td class="center-align"><?php  ?><a href="excluir.php?id=<?php echo $user['id_planta'] ?>"><i class="material-icons black-text" >delete</i></a></td>
+            <td class="center-align"><a href="alterar-planta.php?id=<?php echo $user['id_planta'] ?>"><i class="material-icons black-text" >edit</i></a></td>
+            <td class="center-align"><a href="excluir.php?id=<?php echo $user['id_planta'] ?>"><i class="material-icons black-text" >delete</i></a></td>
           </tr>
 
           <?php endwhile; ?>
