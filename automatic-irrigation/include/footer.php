@@ -1,24 +1,12 @@
 <footer class="page-footer teal ">
-          <div class="container">
-            <div class="row">
+            <div class="row conta container">
               <div class="col l6 s12">
-                <h5 class="white-text">Contatos</h5>
                 <p class="grey-text text-lighten-4">Você pode conferir o nosso repositório.</p>
               </div>
-              <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
-                <ul>
-                  <li><a class="grey-text text-lighten-3 " href="https://github.com/thedrops/-automatic-irrigation">GitHub</a></li>
-                </ul>
+              <div class="col l4 offset-l2 s12 container">
+                  <a href="https://github.com/thedrops/-automatic-irrigation"><p class="grey-text text-lighten-4 ">GitHub</p></a>
               </div>
             </div>
-          </div>
-          <div class="footer-copyright">
-            <div class="container">
-                <h6>Obrigado por nos visitar</h6>
-                <h6 class="red-text " >♥</h6>
-            </div>
-          </div>
         </footer>
 </body>
 </html>
