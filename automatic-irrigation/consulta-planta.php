@@ -2,10 +2,10 @@
   include('include/header.php');
   include('include/nav.php');
   require_once 'consulta-planta-sql.php';
-    
+
 ?>
     <!-- <p>Total de plantas: <?php echo $total ?></p>!-->
-      <?php if($total > 0): ?>  
+      <?php if($total > 0): ?>
       <div class="container">
       <table class="center-align">
         <thead>
@@ -29,7 +29,7 @@
             <td class="center-align"><?php  ?></td>
             <td class="center-align"><?php  ?><a href="excluir.php?id=<?php echo $user['id_planta'] ?>"><i class="material-icons black-text" >delete</i></a></td>
           </tr>
-   
+
           <?php endwhile; ?>
         </tbody>
         <?php else:?>

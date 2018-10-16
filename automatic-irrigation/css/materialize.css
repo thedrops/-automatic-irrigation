@@ -2161,9 +2161,10 @@ html {
 /**
  * Remove the margin in all browsers (opinionated).
  */
-body {
-  margin: 0;
-}
+ body {
+    margin: 0;
+  }
+
 
 /**
  * Add the correct display in IE 9-.
@@ -2194,10 +2195,10 @@ h1 {
  */
 figcaption,
 figure,
-main {
-  /* 1 */
-  display: block;
-}
+
+  main {
+    flex: 1 0 auto;
+  }
 
 /**
  * Add the correct margin in IE 8.

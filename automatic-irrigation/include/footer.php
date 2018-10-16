@@ -1,4 +1,4 @@
-<footer class="page-footer teal">
+<footer class="page-footer teal ">
           <div class="container">
             <div class="row">
               <div class="col l6 s12">
@@ -38,15 +38,3 @@
     $('.sidenav').sidenav();
   });
 </script>
-
-<style>
-body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
-
-  main {
-    flex: 1 0 auto;
-  }
-</style>
