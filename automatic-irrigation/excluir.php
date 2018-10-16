@@ -1,8 +1,11 @@
 <?php
+include('include/header.php');
+include('include/nav.php');
+
     require_once "conexao.php";
     // pega o ID da URL
     $id = isset($_GET['id']) ? $_GET['id'] : null;
- 
+
      // abre a conexão
      $PDO = db_connect();
 
@@ -21,4 +24,6 @@
         print_r($stmt->errorInfo());
     }
  
+
+include('include/footer.php');
 ?>

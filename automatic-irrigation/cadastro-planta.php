@@ -1,4 +1,6 @@
 <?php
+include('include/header.php');
+include('include/nav.php');
 
     require_once 'conexao.php';
 
@@ -42,6 +44,7 @@
     
     if($stmt->execute()){
         echo "cadastro efetuado com sucesso";
+        
     }
     else{
         echo "erro no cadastro de planta";
