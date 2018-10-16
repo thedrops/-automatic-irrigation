@@ -52,6 +52,11 @@ p {
 }
 
 footer.page-footer {
-  margin: 0;
+  position:absolute;
+  bottom:0;
+  width: 100%;
   
+}
+body{
+  position:relative;
 }
