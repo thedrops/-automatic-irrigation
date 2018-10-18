@@ -17,22 +17,24 @@
     }
 
     //tornando a senha em um hash 
-    $senha = sha1(md5($senha);
+    $senha = sha1(md5($senha));
+  
 
     //pesquisa no banco se a informação está correta
-    $PDO = db_conect();
-    $sql = "SELECT usuario,senha FROM usuario WHERE usuario= :usuario AND senha= :senha";
+    $PDO = db_connect();
+    $sql = "SELECT * FROM usuario WHERE usuario= :usuario AND senha= :senha";
     $stmt = $PDO->prepare($sql);
     $stmt->bindParam(':usuario', $login);
     $stmt->bindParam(':senha', $senha);
-
+    $stmt->execute();
     $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
  
     if (count($users) == 0)
     {
-        echo "Email ou senha incorretos";
+        echo "Login ou senha incorretos";
         exit;
     }
+    
     
     // pega o primeiro usuário
     $user = $users[0];
@@ -40,8 +42,7 @@
     //inicia sessão
     session_start();
     $_SESSION['logged_in'] = true;
-    $_SESSION['user_id'] = $user['id'];
     $_SESSION['user_name'] = $user['usuario'];
-
+    echo "Logado!";
 
 ?>
