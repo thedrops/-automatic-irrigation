@@ -19,16 +19,16 @@
  <!-- Modal Structure -->
   <div id="modal1" class="modal " style="max-width:30%;">
     <div class="modal-content  ">
-    <form class=" container">
+    <form class=" container" method="POST" action="verifica-login.php">
       <div class="row">
         <div class="input-field  col s12">
-          <input placeholder="Login" id="login" type="text" class="validate">
+          <input placeholder="Login" name="login" id="login" type="text" class="validate">
           <label for="login">Login</label>
         </div>
         </div>
     <div class="row">
         <div class="input-field col s12">
-          <input id="senha" type="password" class="validate">
+          <input id="senha" name="senha" type="password" class="validate">
           <label for="senha">Senha</label>
         </div>
       </div>
