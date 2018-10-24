@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 25-Out-2018 às 00:33
+-- Generation Time: 25-Out-2018 às 01:12
 -- Versão do servidor: 10.1.34-MariaDB
 -- PHP Version: 7.2.7
 
@@ -48,6 +48,30 @@ INSERT INTO `plantas` (`id_planta`, `nome_planta`, `nome_cientifico`, `umidade`,
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `rega`
+--
+
+CREATE TABLE `rega` (
+  `id_rega` int(11) NOT NULL,
+  `id_registro` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `registro`
+--
+
+CREATE TABLE `registro` (
+  `id_registro` int(11) NOT NULL,
+  `data` datetime NOT NULL,
+  `temperatura` int(11) NOT NULL,
+  `umidade` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `usuario`
 --
 
@@ -71,6 +95,19 @@ ALTER TABLE `plantas`
   ADD PRIMARY KEY (`id_planta`);
 
 --
+-- Indexes for table `rega`
+--
+ALTER TABLE `rega`
+  ADD PRIMARY KEY (`id_rega`),
+  ADD KEY `id_registro` (`id_registro`);
+
+--
+-- Indexes for table `registro`
+--
+ALTER TABLE `registro`
+  ADD PRIMARY KEY (`id_registro`);
+
+--
 -- Indexes for table `usuario`
 --
 ALTER TABLE `usuario`
@@ -87,10 +124,32 @@ ALTER TABLE `plantas`
   MODIFY `id_planta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT for table `rega`
+--
+ALTER TABLE `rega`
+  MODIFY `id_rega` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `registro`
+--
+ALTER TABLE `registro`
+  MODIFY `id_registro` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
   MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Limitadores para a tabela `rega`
+--
+ALTER TABLE `rega`
+  ADD CONSTRAINT `id_registro` FOREIGN KEY (`id_registro`) REFERENCES `registro` (`id_registro`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
