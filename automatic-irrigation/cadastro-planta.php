@@ -1,52 +1,50 @@
 <?php
-include('include/header.php');
-include('include/nav.php');
-
-    require_once 'conexao.php';
-
-    //inicializar variáveis 
-    $nome_planta = isset($_POST['nome_planta']) ? $_POST['nome_planta'] : null;
-    $nome_cientifico = isset($_POST['nome_cientifico']) ? $_POST['nome_cientifico'] : null;
-    $umidade = isset($_POST['umidade']) ? $_POST['umidade'] : null;
-    $temperatura = isset($_POST['temperatura']) ? $_POST['temperatura'] : null;
-
-    //validação de campos nullos $_GET
-    
-    if(empty($nome_planta)){
-            echo "1";
-    }
-    
-     if(empty($nome_cientifico)){
-            echo "2";
-    }
-
- if(empty($umidade)){
-            echo "3";
-    }
-
- if(empty($temperatura)){
-            echo "4";
-    }
-
-    if(empty($nome_planta) || empty($nome_cientifico) || empty($umidade) || empty($temperatura)){
-        echo "campo vazio , volte e preencha todos os campos";
-        exit;
-    }
-
-    //inserção de dados no banco 
-    $PDO = db_connect();
-    $sql = "INSERT INTO plantas(nome_planta,nome_cientifico,umidade,temperatura) VALUES(:nome_planta,:nome_cientifico,:umidade,:temperatura)"; 
-    $stmt = $PDO->prepare($sql);
-    $stmt->bindParam(':nome_planta', $nome_planta);
-    $stmt->bindParam(':nome_cientifico', $nome_cientifico);
-    $stmt->bindParam(':umidade',$umidade);
-    $stmt->bindParam(':temperatura',$temperatura);
-    
-    if($stmt->execute()){
-        echo "cadastro efetuado com sucesso";
-        
-    }
-    else{
-        echo "erro no cadastro de planta";
-    }
+  include('include/header.php');
+  include('include/nav.php');
 ?>
+    <div class="container">
+    <h1 class="center">Cadastro de planta</h1>
+    
+    <div class="row">
+        <form class="col s12" method="POST" action="cadastro-planta.php">
+          <div class="row">
+            <div class="input-field col s6">
+              <input name="nome_planta" placeholder="Nome Popular" id="nome_planta" type="text" class="validate">
+              <label for="nome_planta">Nome Popular</label>
+            </div>
+
+
+              <div class="row">
+                <div class="input-field col s6">
+                  <input placeholder="Nome Científico" name="nome_cientifico" id="nome_cientifico" type="text" class="validate">
+                  <label for="nome_cientifico">Nome Científico</label>
+                </div>
+          </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <input name="umidade" placeholder="Umidade" id="umidade" type="text" class="validate">
+              <label for="umidade">Umidade</label>
+            </div>
+
+              <div class="row">
+                <div class="input-field col s6">
+                  <input name="temperatura"placeholder="Temperatura" id="temperatura" type="text" class="validate">
+                  <label for="temperatura">Temperatura</label>
+                </div>
+          </div>
+          </div>
+
+            <button class="btn waves-effect waves-light right" type="submit" name="action">Cadastrar
+                <i class="material-icons right">send</i>
+            </button>
+
+
+        </form>
+  </div>
+</div>
+
+<?php
+include('include/footer.php');
+?>
+
