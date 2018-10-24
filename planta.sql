@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 11-Out-2018 às 03:03
+-- Generation Time: 25-Out-2018 às 00:33
 -- Versão do servidor: 10.1.34-MariaDB
 -- PHP Version: 7.2.7
 
@@ -43,7 +43,22 @@ CREATE TABLE `plantas` (
 INSERT INTO `plantas` (`id_planta`, `nome_planta`, `nome_cientifico`, `umidade`, `temperatura`) VALUES
 (1, '1', '1', 1, 1),
 (2, 'Mandioca', 'Manihot esculenta', 59, 75),
-(3, 'Alface', 'Lactuca sativa', 12, 25);
+(3, 'Alface', 'Lactuca sativa', 99, 55);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `usuario`
+--
+
+CREATE TABLE `usuario` (
+  `id_usuario` int(11) NOT NULL,
+  `nome_usuario` text NOT NULL,
+  `login_usuario` text NOT NULL,
+  `email` text NOT NULL,
+  `endereco` text NOT NULL,
+  `senha` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Indexes for dumped tables
@@ -56,6 +71,12 @@ ALTER TABLE `plantas`
   ADD PRIMARY KEY (`id_planta`);
 
 --
+-- Indexes for table `usuario`
+--
+ALTER TABLE `usuario`
+  ADD PRIMARY KEY (`id_usuario`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -64,6 +85,12 @@ ALTER TABLE `plantas`
 --
 ALTER TABLE `plantas`
   MODIFY `id_planta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `usuario`
+--
+ALTER TABLE `usuario`
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
