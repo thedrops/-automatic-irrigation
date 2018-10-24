@@ -6,7 +6,7 @@
     <h1 class="center">Solicitar Licença de Software</h1>
 
     <div class="row">
-        <form class="col s12" method="POST" action="">
+        <form class="col s12" method="POST" action="cadastro-usuario-sql.php">
           <div class="row">
             <div class="input-field col s6">
               <input name="nome_usuario" placeholder="ex: Delano de Souza Morais" id="nome_usuario" type="text" class="validate">

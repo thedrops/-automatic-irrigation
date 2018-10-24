@@ -5,8 +5,8 @@
     $login = isset($_POST['nome_login']) ? $_POST['nome_usuario'] : null;
     $endereco = isset($_POST['endereco']) ? $_POST['endereco'] : null;
     $senha = sprintf('%07X', mt_rand(0, 0xFFFFFFF));
-
-    if(empty($usuario)){
+    $senha = sha1(md5($senha));
+    if(empty($login)){
         echo "Informe o usuário";
         exit;
     }
@@ -18,7 +18,7 @@
     $stmt->bindParam(':login_usuario', $login);
     $stmt->bindParam(':email', $email);
     $stmt->bindParam(':endereco',$endereco);
-    $stmt->bindParam(':senha', sha1(md5($senha));
+    $stmt->bindParam(':senha', $senha);
 
     if($stmt->execute()){
         echo "Usuário gerado com sucesso"; 
