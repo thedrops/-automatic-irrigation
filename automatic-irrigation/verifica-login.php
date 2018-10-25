@@ -22,7 +22,7 @@
 
     //pesquisa no banco se a informação está correta
     $PDO = db_connect();
-    $sql = "SELECT * FROM usuario WHERE usuario= :usuario AND senha= :senha";
+    $sql = "SELECT * FROM usuario WHERE login_usuario= :usuario AND senha= :senha";
     $stmt = $PDO->prepare($sql);
     $stmt->bindParam(':usuario', $login);
     $stmt->bindParam(':senha', $senha);
@@ -42,7 +42,7 @@
     //inicia sessão
     session_start();
     $_SESSION['logged_in'] = true;
-    $_SESSION['user_name'] = $user['usuario'];
+    //$_SESSION['user_name'] = $user['usuario'];
     echo "Logado!";
 
 ?>
