@@ -10,5 +10,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <script src='js/jquery-3.0.0.js' type='text/javascript'></script>
+  <script src='js/ajax-function.js' type='text/javascript'></script>
 </head>
 <body>

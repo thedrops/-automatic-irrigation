@@ -2,14 +2,15 @@
     <div class="nav-wrapper container">
       <a id="logo-container" href="index.php" class="brand-logo"><img src='images/WETTER.png'/></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="planta-form.php">Cadastro</a></li>
+        <li><a href="cadastro-planta.php">Cadastro</a></li>
         <li><a href="consulta-planta.php">Consulta</a></li>
       </ul>
 
       <ul id="nav-mobile" class="sidenav">
-        <li><a href="planta-form.php">Cadastro</a></li>
+        <li><a href="cadastro-planta.php">Cadastro</a></li>
         <li><a href="consulta-planta.php">Consulta</a></li>
       </ul>
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
   </nav>
+<main>

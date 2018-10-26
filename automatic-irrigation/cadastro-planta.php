@@ -6,7 +6,7 @@
     <h1 class="center">Cadastro de planta</h1>
     
     <div class="row">
-        <form class="col s12" method="POST" action="cadastro-planta.php">
+        <form class="col s12" method="POST" action="cadastro-planta-sql.php">
           <div class="row">
             <div class="input-field col s6">
               <input name="nome_planta" placeholder="Nome Popular" id="nome_planta" type="text" class="validate">

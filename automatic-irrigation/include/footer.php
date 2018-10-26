@@ -1,3 +1,4 @@
+</main>
 <footer class="page-footer teal ">
             <div class="row conta container">
               <div class="col l6 s12">

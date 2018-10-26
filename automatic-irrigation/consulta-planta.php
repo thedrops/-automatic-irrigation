@@ -6,9 +6,10 @@
 ?>
     <!-- <p>Total de plantas: <?php echo $total ?></p>!-->
       <?php if($total > 0): ?>
+
       <div class="container">
-      <table class="center-align">
-        <thead>
+      <table class="center-align highlight">
+        <thead >
           <tr>
               <th class="center-align" >Nome</th>
               <th class="center-align" >Nome cientifico</th>
@@ -27,7 +28,7 @@
             <td class="center-align"><?php echo $user['umidade'] ?></td>
             <td class="center-align"><?php echo $user['temperatura'] ?></td>
             <td class="center-align"><a href="alterar-planta.php?id=<?php echo $user['id_planta'] ?>"><i class="material-icons black-text" >edit</i></a></td>
-            <td class="center-align"><a href="excluir.php?id=<?php echo $user['id_planta'] ?>"><i class="material-icons black-text" >delete</i></a></td>
+            <td class="center-align" ><span id = '<?php echo $user['id_planta']; ?>' class="delete"><i class="material-icons black-text" >delete</i></span></td>
           </tr>
 
           <?php endwhile; ?>

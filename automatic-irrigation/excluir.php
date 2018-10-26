@@ -4,7 +4,7 @@ include('include/nav.php');
 
     require_once "conexao.php";
     // pega o ID da URL
-    $id = isset($_GET['id']) ? $_GET['id'] : null;
+    $id = isset($_POST['id']) ? $_POST['id'] : null;
 
      // abre a conexão
      $PDO = db_connect();
@@ -14,15 +14,8 @@ include('include/nav.php');
     $stmt = $PDO->prepare($sql);
     $stmt->bindParam(':id', $id, PDO::PARAM_INT);
 
-    if ($stmt->execute())
-    {
-        echo "Planta removida";
-    }
-    else
-    {
-        echo "Erro ao remover";
-        print_r($stmt->errorInfo());
-    }
+    $stmt->execute();
+    
  
 
 include('include/footer.php');
