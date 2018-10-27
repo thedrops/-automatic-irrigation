@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 25-Out-2018 às 01:12
+-- Generation Time: 27-Out-2018 às 03:12
 -- Versão do servidor: 10.1.34-MariaDB
 -- PHP Version: 7.2.7
 
@@ -36,15 +36,6 @@ CREATE TABLE `plantas` (
   `temperatura` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Extraindo dados da tabela `plantas`
---
-
-INSERT INTO `plantas` (`id_planta`, `nome_planta`, `nome_cientifico`, `umidade`, `temperatura`) VALUES
-(1, '1', '1', 1, 1),
-(2, 'Mandioca', 'Manihot esculenta', 59, 75),
-(3, 'Alface', 'Lactuca sativa', 99, 55);
-
 -- --------------------------------------------------------
 
 --
@@ -55,6 +46,24 @@ CREATE TABLE `rega` (
   `id_rega` int(11) NOT NULL,
   `id_registro` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `rega`
+--
+
+INSERT INTO `rega` (`id_rega`, `id_registro`) VALUES
+(1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `rega_registro`
+-- (See below for the actual view)
+--
+CREATE TABLE `rega_registro` (
+`x` int(2)
+,`y` int(2)
+);
 
 -- --------------------------------------------------------
 
@@ -68,6 +77,13 @@ CREATE TABLE `registro` (
   `temperatura` int(11) NOT NULL,
   `umidade` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `registro`
+--
+
+INSERT INTO `registro` (`id_registro`, `data`, `temperatura`, `umidade`) VALUES
+(1, '2018-10-23 11:00:00', 22, 22);
 
 -- --------------------------------------------------------
 
@@ -83,6 +99,15 @@ CREATE TABLE `usuario` (
   `endereco` text NOT NULL,
   `senha` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `rega_registro`
+--
+DROP TABLE IF EXISTS `rega_registro`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `rega_registro`  AS  select dayofmonth(`registro`.`data`) AS `x`,hour(`registro`.`data`) AS `y` from (`rega` join `registro`) where (`rega`.`id_registro` = `registro`.`id_registro`) ;
 
 --
 -- Indexes for dumped tables
@@ -121,19 +146,19 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT for table `plantas`
 --
 ALTER TABLE `plantas`
-  MODIFY `id_planta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_planta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `rega`
 --
 ALTER TABLE `rega`
-  MODIFY `id_rega` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_rega` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `registro`
 --
 ALTER TABLE `registro`
-  MODIFY `id_registro` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_registro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `usuario`
