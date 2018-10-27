@@ -15,7 +15,7 @@ $(document).ready(function(){
    
        // Removing row from HTML Table
        $(elemento).closest('tr').css('background','tomato');
-       $(elelemento).closest('tr').fadeOut(800, function(){ 
+       $(elemento).closest('tr').fadeOut(800, function(){ 
        $(this).remove();
        });
    
