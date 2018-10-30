@@ -9,7 +9,7 @@ include('include/nav.php');
     <div class="section no-pad-bot">
       <div class="container">
         <br><br>
-        <h1 class="header center white-text text-lighten-2">Monitore seu plantil</h1>
+        <h1 class="header center white-text text-lighten-2">Monitore seu plantio</h1>
         <div class="row center">
           <h5 class="header col s12 " >Plataforma de controle de irrigação de precisão</h5>
         </div>
@@ -40,7 +40,7 @@ include('include/nav.php');
 
         <div class="col s12 m4">
           <div class="icon-block">
-          <h2 class="center teal-text"><i class="material-icons">attach_money</i></h2>
+          <h2 class="center blue-text"><i class="material-icons">attach_money</i></h2>
             <h5 class="center">Baixo Custo</h5>
 
             <p>By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>

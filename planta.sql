@@ -93,7 +93,7 @@ INSERT INTO `registro` (`id_registro`, `data`, `temperatura`, `umidade`) VALUES
 
 CREATE TABLE `usuario` (
   `id_usuario` int(11) NOT NULL,
-  `nome_usuario` text NOT NULL,
+  `nome_usuario` text unique NOT NULL,
   `login_usuario` text NOT NULL,
   `email` text NOT NULL,
   `endereco` text NOT NULL,
