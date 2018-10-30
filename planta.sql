@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
+-- version 4.6.6
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: 27-Out-2018 às 03:12
--- Versão do servidor: 10.1.34-MariaDB
--- PHP Version: 7.2.7
+-- Host: localhost
+-- Generation Time: 30-Out-2018 às 15:50
+-- Versão do servidor: 5.7.17-log
+-- PHP Version: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -52,7 +50,9 @@ CREATE TABLE `rega` (
 --
 
 INSERT INTO `rega` (`id_rega`, `id_registro`) VALUES
-(1, 1);
+(7, 4),
+(8, 5),
+(9, 6);
 
 -- --------------------------------------------------------
 
@@ -61,7 +61,7 @@ INSERT INTO `rega` (`id_rega`, `id_registro`) VALUES
 -- (See below for the actual view)
 --
 CREATE TABLE `rega_registro` (
-`x` int(2)
+`x` date
 ,`y` int(2)
 );
 
@@ -83,7 +83,9 @@ CREATE TABLE `registro` (
 --
 
 INSERT INTO `registro` (`id_registro`, `data`, `temperatura`, `umidade`) VALUES
-(1, '2018-10-23 11:00:00', 22, 22);
+(4, '2018-10-10 10:00:00', 22, 22),
+(5, '2018-10-11 12:00:00', 18, 22),
+(6, '2018-10-12 14:00:00', 22, 22);
 
 -- --------------------------------------------------------
 
@@ -93,7 +95,7 @@ INSERT INTO `registro` (`id_registro`, `data`, `temperatura`, `umidade`) VALUES
 
 CREATE TABLE `usuario` (
   `id_usuario` int(11) NOT NULL,
-  `nome_usuario` text unique NOT NULL,
+  `nome_usuario` text NOT NULL,
   `login_usuario` text NOT NULL,
   `email` text NOT NULL,
   `endereco` text NOT NULL,
@@ -107,7 +109,7 @@ CREATE TABLE `usuario` (
 --
 DROP TABLE IF EXISTS `rega_registro`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `rega_registro`  AS  select dayofmonth(`registro`.`data`) AS `x`,hour(`registro`.`data`) AS `y` from (`rega` join `registro`) where (`rega`.`id_registro` = `registro`.`id_registro`) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `rega_registro`  AS  select cast(`registro`.`data` as date) AS `x`,hour(`registro`.`data`) AS `y` from (`registro` join `rega`) where (`rega`.`id_registro` = `registro`.`id_registro`) ;
 
 --
 -- Indexes for dumped tables
@@ -147,25 +149,21 @@ ALTER TABLE `usuario`
 --
 ALTER TABLE `plantas`
   MODIFY `id_planta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
 --
 -- AUTO_INCREMENT for table `rega`
 --
 ALTER TABLE `rega`
-  MODIFY `id_rega` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
+  MODIFY `id_rega` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `registro`
 --
 ALTER TABLE `registro`
-  MODIFY `id_registro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
+  MODIFY `id_registro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
   MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- Constraints for dumped tables
 --
@@ -175,7 +173,6 @@ ALTER TABLE `usuario`
 --
 ALTER TABLE `rega`
   ADD CONSTRAINT `id_registro` FOREIGN KEY (`id_registro`) REFERENCES `registro` (`id_registro`);
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
