@@ -6,11 +6,11 @@
     <h1 class="center">Solicitar Licença de Software</h1>
 
     <div class="row">
-        <form class="col s12" method="POST" action="cadastro-usuario-sql.php">
+    <div id='resposta'></div>
           <div class="row">
             <div class="input-field col s6">
                 <i class="material-icons prefix">person</i>
-                <input name="nome_usuario" placeholder="ex: Delano de Souza Morais" id="nome_usuario" type="text"  class="validate">
+                <input name="nome_usuario" placeholder="ex: Delano de Souza Morais" id="nome_usuario" type="text"   class="validate">
               <label for="nome_usuario" class='black-text input-label'><b>Nome Completo</b></label>
             </div>
 
@@ -33,7 +33,7 @@
                 <div class="input-field col s6">
                    <i class="material-icons prefix">lock</i>
                    <input name="senha"placeholder="***" id="senha" type="password" class="validate">
-                  <label for="senha" class='black-text'><b>Senha de Usuário<b/></label>
+                  <label for="senha" class='black-text'><b>Senha de Usuário</b></label>
                 </div>
               </div>
 
@@ -41,20 +41,21 @@
                 <div class="input-field col s12">
                     <i class="material-icons prefix">home</i>
                     <input name="endereco"placeholder="ex: Rua Oswaldo Cruz, nº 10, centro, Caraguatatuba" id="endereco" type="text" class="validate">
-                  <label for="endereco" class='black-text'><b>Endereço<b/></label>
+                  <label for="endereco" class='black-text'><b>Endereço</b></label>
                 </div>
 
 
           </div>
 
-            <button class="btn waves-effect waves-light right" type="submit" name="action">Solicitar
+            <button class="btn waves-effect waves-light right cadastro-usuario" >Solicitar
                 <i class="material-icons right">check</i>
             </button>
 
 
-        </form>
+        
   </div>
 </div>
+
 
 <?php
 include('include/footer.php');

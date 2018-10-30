@@ -9,7 +9,7 @@ include('include/nav.php');
     <div class="section no-pad-bot">
       <div class="container">
         <br><br>
-        <h1 class="header center white-text text-lighten-2">Monitore seu plantil</h1>
+        <h1 class="header center white-text text-lighten-2">Monitore seu plantio</h1>
         <div class="row center">
           <h5 class="header col s12 " >Plataforma de controle de irrigação de precisão</h5>
         </div>
