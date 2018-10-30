@@ -6,7 +6,7 @@ require_once 'conexao.php';
     $PDO = db_connect();
 
     //contar o total de plantas
-    $sql_count = "select(last_insert_id(id_rega)) AS total from rega_registro ";
+    $sql_count = "SELECT COUNT(*) AS total from rega_registro ";
 
     // SQL para selecionar os registros
     $sql = "SELECT * FROM rega_registro";
@@ -19,4 +19,6 @@ require_once 'conexao.php';
     // seleciona os registros
     $stmt = $PDO->prepare($sql);
     $stmt->execute();
+
+
 ?>

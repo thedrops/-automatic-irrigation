@@ -1,81 +1,45 @@
-<?php   
+<?php
 include("include/header.php");
 include("include/nav.php");
 require_once 'consulta-grafico-sql.php';
 
-$rega = $stmt->fetch(PDO::FETCH_ASSOC);
-$dataPoints1 = array();
-
-
-
-
 ?>
-
-
-
-
-
-
+<div id="chart" class="container" style="height: 250px;"></div>
 <script>
-window.onload = function () {
- 
-var chart = new CanvasJS.Chart("chartContainer", {
-	animationEnabled: true,
-	title:{
-		text: "Dynamic Viscosity Vs Density over Temperature of Water"
-	},
-	axisX:{
-		title: "Temperature [°C]"
-	},
-	axisY:{
-		title: "Dynamic Viscosity [mPa.s]",
-		titleFontColor: "#4F81BC",
-		lineColor: "#4F81BC",
-		labelFontColor: "#4F81BC",
-		tickColor: "#4F81BC"
-	},
-	axisY2:{
-		title: "Density [g/cm³]",
-		titleFontColor: "#C0504E",
-		lineColor: "#C0504E",
-		labelFontColor: "#C0504E",
-		tickColor: "#C0504E",
-		includeZero: false
-	},
-	legend:{
-		cursor: "pointer",
-		dockInsidePlotArea: true,
-		itemclick: toggleDataSeries
-	},
-	data: [{
-		type: "line",
-		name: "Dynamic Viscosity",
-		markerSize: 0,
-		toolTipContent: "Temperature: {x} °C <br>{name}: {y} mPa.s",
-		showInLegend: true,
-		dataPoints: <?php echo json_encode($dataPoints1, JSON_NUMERIC_CHECK); ?>
-	}]
+
+
+ new Morris.Line({
+  element: 'chart',
+  data: [<?php
+  $total = $stmt->rowCount();
+  $contador = 1;
+    while($rega = $stmt->fetch(PDO::FETCH_ASSOC)):
+    if ($contador != $total){?>
+      { dt: '<?php echo $rega['x'];?>', hr: "<?php echo $rega['y'];?>"},
+    <?php }else{ ?>
+      { dt:'<?php echo $rega["x"];?>', hr: "<?php echo $rega['y'];?>"}
+      <?php
+      }
+      $contador++;
+    endwhile; ?>
+  ],
+  lineColors: ['#819C79'],
+  xkey: 'dt',
+  ykeys: ['hr'],
+  labels: ['Hora'],
+  xLabels: 'day',
+  xLabelAngle: 45,
+  xLabelFormat: function (d) {
+
+    return  ("0" + (d.getDate())).slice(-2) + '-' + ("0" + (d.getMonth() + 1)).slice(-2) + '-' + d.getFullYear();
+  },
+  resize: true
 });
-chart.render();
- 
-function toggleDataSeries(e){
-	if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
-		e.dataSeries.visible = false;
-	}
-	else{
-		e.dataSeries.visible = true;
-	}
-	chart.render();
-}
- 
-}
+
+
+
+
 </script>
-<div id="chartContainer" style="height: 370px; width: 100%;"></div>
-<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-
-
-
-
 
 
 

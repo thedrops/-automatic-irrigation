@@ -40,7 +40,7 @@ include('include/nav.php');
 
         <div class="col s12 m4">
           <div class="icon-block">
-          <h2 class="center teal-text"><i class="material-icons">attach_money</i></h2>
+          <h2 class="center blue-text"><i class="material-icons">attach_money</i></h2>
             <h5 class="center">Baixo Custo</h5>
 
             <p>By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
