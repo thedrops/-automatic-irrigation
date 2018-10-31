@@ -20,7 +20,7 @@ include('include/nav.php');
 
       </div>
     </div>
-    <div class="parallax"><img src="images/keppo.png" alt="Unsplashed background img 1"></div>
+    <div class="parallax"><img src="images/background3.jpg" alt="Unsplashed background img 1"></div>
   </div>
 
 
