@@ -1,6 +1,8 @@
 <?php
 include('include/header.php');
 include('include/nav.php');
+session_start();
+echo''
 ?>
         <!-- Header-->
 
@@ -14,7 +16,7 @@ include('include/nav.php');
           <h5 class="header col s12 " >Plataforma de controle de irrigação de precisão</h5>
         </div>
         <div class="row center">
-          <a href="#informacoes"  class="btn-large  teal lighten-1">Confira</a>
+          <a href="cadastro-usuario.php"  class="btn-large  teal lighten-1">Confira</a>
         </div>
         <br><br>
 
@@ -32,7 +34,7 @@ include('include/nav.php');
         <div class="col s12 m4">
           <div class="icon-block">
             <h2 class="center blue-text"><i class="material-icons">opacity</i></h2>
-            <h5 class="center">Economia de água</h5>
+            <h5 class="center">Economia de Água</h5>
 
             <p style="text-align:justify">Através de um algoritmo elaborado de medição de temperatura e umidade que controla a rega obtem se a maior eficiência no consumo de água.</p>
           </div>

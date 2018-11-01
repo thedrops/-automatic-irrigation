@@ -7,13 +7,13 @@
     <form class="col s12" action="verifica-login.php" method="post" >
       <div class="row center">
         <div class="input-field col s12">
-          <input placeholder="Ex:teste@teste" id="login" type="text" class="validate">
+          <input placeholder="Ex:teste@teste" name="login" id="login" type="text" class="validate">
           <label for="login">E-mail</label>
         </div>
         </div>
         <div class="row">
         <div class="input-field col s12">
-          <input placeholder="Ex:123" id="senha" type="password" class="validate">
+          <input placeholder="Ex:123" name="senha" id="senha" type="password" class="validate">
           <label for="senha">Senha</label>
         </div>
         </div>

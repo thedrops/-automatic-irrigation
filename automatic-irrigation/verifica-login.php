@@ -42,7 +42,9 @@
     //inicia sessão
     session_start();
     $_SESSION['logged_in'] = true;
-    //$_SESSION['user_name'] = $user['usuario'];
+    $_SESSION['user_name'] = $user['id'];
     echo "Logado!";
+
+    header("Location:index.php");
 
 ?>
