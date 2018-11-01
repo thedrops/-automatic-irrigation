@@ -1,11 +1,11 @@
 <?php
-
     require_once 'conexao.php';
 
     //pega informação
     $login = isset($_POST['login']) ? $_POST['login'] : null;
     $senha = isset($_POST['senha']) ? $_POST['senha'] : null;
 
+    echo($login);
     //valida campos
     if(empty($login)){
         echo "Preencha o campo do login";

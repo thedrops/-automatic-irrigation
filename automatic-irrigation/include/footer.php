@@ -2,13 +2,13 @@
 <!-- Modal Structure -->
   <div id="modal1" class="modal" style="width:30%">
     <div class="modal-content">
-      <h4 class=' center'>Cadastro</h4>
+      <h4 class='center'>Cadastro</h4>
 
-    <form class="col s12" action="verifica-login.php" >
+    <form class="col s12" action="verifica-login.php" method="post" >
       <div class="row center">
         <div class="input-field col s12">
-          <input placeholder="Ex:teste@teste" id="email" type="text" class="validate">
-          <label for="email">E-mail</label>
+          <input placeholder="Ex:teste@teste" id="login" type="text" class="validate">
+          <label for="login">E-mail</label>
         </div>
         </div>
         <div class="row">
@@ -17,7 +17,7 @@
           <label for="senha">Senha</label>
         </div>
         </div>
-        <button class="btn waves-effect waves-light  cadastro-usuario" >Logar
+        <button class="btn waves-effect waves-light" >Logar
                 <i class="material-icons right">send</i>
         </button>
     </form>

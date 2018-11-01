@@ -43,7 +43,7 @@ include('include/nav.php');
           <h2 class="center blue-text"><i class="material-icons">attach_money</i></h2>
             <h5 class="center">Baixo Custo</h5>
 
-            <p>By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
+            <p>Tecnologia de ponta de baixo custo e alta eficiência, espera por você através do projeto WETTER. Implante esse sistema e tenha retorno em menos de 6 meses. Garantido!!!</p>
           </div>
         </div>
 
