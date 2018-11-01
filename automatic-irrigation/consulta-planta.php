@@ -8,6 +8,7 @@
       <?php if($total > 0): ?>
 
       <div class="container">
+      <h1 class="center">Plantas Cadastradas</h1>
       <table class="center-align highlight">
         <thead >
           <tr>
@@ -28,7 +29,7 @@
             <td class="center-align"><?php echo $user['umidade'] ?></td>
             <td class="center-align"><?php echo $user['temperatura'] ?></td>
             <td class="center-align"><a href="alterar-planta.php?id=<?php echo $user['id_planta'] ?>"><i class="material-icons black-text" >edit</i></a></td>
-            <td class="center-align" ><span id = '<?php echo $user['id_planta']; ?>' class="delete"><i class="material-icons black-text" >delete</i></span></td>
+            <td class="center-align" ><a href="" id = '<?php echo $user['id_planta']; ?>' class="delete"><i class="material-icons black-text" >delete</i></a></td>
           </tr>
 
           <?php endwhile; ?>
