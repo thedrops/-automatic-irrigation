@@ -31,36 +31,42 @@ $(document).ready(function(){
         var senha =  $("input[type=password][name=senha]").val();
         var email =  $("input[type=text][name=email]").val();
         var endereco =  $("input[type=text][name=endereco]").val();
-        var campoNullo= false;
+        var validacao= false;
+
+        var regExp = /^[\w]+@[\w]+\.[\w|\.]+$/;
         
         $('#resposta').children().remove();
         //Verificando cadastro
         if(nomeUsuario == ""){
-            campoNullo = true;
+            validacao = true;
             $('#resposta').append("<p class=' lime accent-1 blue-text text-darken-2 '>Preencha o campo Nome Completo</p>");
         }
 
         if(nomeLogin== ""){
-            campoNullo = true;
+            validacao = true;
             $('#resposta').append("<p class=' lime accent-1 blue-text text-darken-2 '>Preencha o campo Nome de Usuário</p> ");
         }
 
         if(senha == ""){
-            campoNullo = true;
+            validacao = true;
             $('#resposta').append("<p class=' lime accent-1 blue-text text-darken-2 '>Preencha o campo Senha</p>");
         }
 
-        if(email == ""){
-            campoNullo = true;
+        if(regExp.test(email) == false){
+            validacao = true;
+            $('#resposta').append("<p class=' lime accent-1 blue-text text-darken-2 '>Formato de email inválido</p>");
+        }
+        else if(email == ""){
+            validacao = true;
             $('#resposta').append("<p class=' lime accent-1 blue-text text-darken-2 '>Preencha o campo Email</p>");
         }
 
         if(endereco == ""){
-            campoNullo = true;
+            validacao = true;
             $('#resposta').append("<p class=' lime accent-1 blue-text text-darken-2 '> Preencha o campo Endereço</p>");
         }
     
-    if(campoNullo == false){
+    if(validacao == false){
     // AJAX Request
      $.ajax({
         url: 'cadastro-usuario-sql.php',
