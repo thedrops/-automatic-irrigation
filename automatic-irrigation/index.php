@@ -1,10 +1,8 @@
 <?php
 include('include/header.php');
 include('include/nav.php');
-session_start();
-echo''
 ?>
-        <!-- Header-->
+    <!-- Header-->
 
 
   <div style="background-color: rgba(174, 211, 255, 0.2);" id="index-banner" class="parallax-container">
@@ -16,7 +14,7 @@ echo''
           <h5 class="header col s12 " >Plataforma de controle de irrigação de precisão</h5>
         </div>
         <div class="row center">
-          <a href="cadastro-usuario.php"  class="btn-large  teal lighten-1">Confira</a>
+          <a href="cadastro-usuario.php"  class=" btn-large teal" >Confira</a>
         </div>
         <br><br>
 

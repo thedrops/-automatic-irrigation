@@ -1,5 +1,8 @@
 <?php
     require_once 'conexao.php';
+    //inicia sessão
+    session_start();
+
 
     //pega informação
     $login = isset($_POST['login']) ? $_POST['login'] : null;
@@ -39,10 +42,9 @@
     // pega o primeiro usuário
     $user = $users[0];
     
-    //inicia sessão
-    session_start();
+
     $_SESSION['logged_in'] = true;
-    $_SESSION['user_name'] = $user['id'];
+    $_SESSION['user_id'] = $user['id_usuario'];
     echo "Logado!";
 
     header("Location:index.php");
