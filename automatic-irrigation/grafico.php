@@ -4,6 +4,7 @@ include("include/nav.php");
 require_once 'consulta-grafico-sql.php';
 
 ?>
+<h2 class="center">Gráfico do dia das regas</h1>
 <div id="chart" class="container" style="height: 250px;"></div>
 <script>
 
