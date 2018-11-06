@@ -34,7 +34,7 @@ include('include/nav.php');
             <h2 class="center blue-text"><i class="material-icons">opacity</i></h2>
             <h5 class="center">Economia de Água</h5>
 
-            <p style="text-align:justify">Através de um algoritmo elaborado de medição de temperatura e umidade que controla a rega obtem se a maior eficiência no consumo de água.</p>
+            <p style="text-align:justify">Através de um algoritmo elaborado de medição de temperatura e umidade que controla a rega obtém-se a maior eficiência no consumo de água.</p>
           </div>
         </div>
 
@@ -52,7 +52,7 @@ include('include/nav.php');
             <h2 class="center blue-text"><i class="material-icons">brush</i></h2>
             <h5 class="center">Customização</h5>
 
-            <p style="text-align:justify">O Sistema vai permitir a adção de novas funções, como sistema autonomo de energia ou alternar o tipo de alimentação baseado na pressão da água.</p>
+            <p style="text-align:justify">O Sistema vai permitir a adção de novas funções, como sistema autônomo de energia ou alternar o tipo de alimentação baseado na pressão da água.</p>
           </div>
         </div>
       </div>

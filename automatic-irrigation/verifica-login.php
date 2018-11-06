@@ -47,6 +47,6 @@
     $_SESSION['user_id'] = $user['id_usuario'];
     echo "Logado!";
 
-    header("Location:index.php");
+    header("Location:painel.php");
 
 ?>

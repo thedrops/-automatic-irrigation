@@ -44,6 +44,7 @@ include('include/nav.php');
 
     if($stmt->execute()){
         echo "cadastro efetuado com sucesso";
+        header('Location:consulta-planta.php');
 
     }
     else{

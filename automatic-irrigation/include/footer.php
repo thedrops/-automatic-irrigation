@@ -2,7 +2,7 @@
 <!-- Modal Structure -->
   <div id="modal1" class="modal" style="width:30%">
     <div class="modal-content">
-      <h4 class='center'>Cadastro</h4>
+      <h4 class='center'>Login</h4>
 
     <form class="col s12" action="verifica-login.php" method="post" >
       <div class="row center">
@@ -59,3 +59,6 @@ document.addEventListener('DOMContentLoaded', function() {
     $('.modal').modal();
   });
 </script>
+
+
+
