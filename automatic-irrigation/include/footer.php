@@ -1,4 +1,5 @@
 </main>
+
 <!-- Modal Structure -->
   <div id="modal1" class="modal" style="width:30%">
     <div class="modal-content">
@@ -23,6 +24,8 @@
     </form>
   </div>
 </div>
+<?php
+if(!$_SESSION){ ?>
  <footer class="page-footer teal ">
             <div class="row conta container">
               <div class="col l6 s12">
@@ -33,6 +36,18 @@
               </div>
             </div>
         </footer>
+<?php }else{ ?>
+ <footer class="page-footer teal " style="margin-left:20%;">
+            <div class="row conta container">
+              <div class="col l6 s12">
+                <p class="grey-text text-lighten-4">Você pode conferir o nosso repositório.</p>
+              </div>
+              <div class="col l4 offset-l2 s12 container">
+                  <a href="https://github.com/thedrops/-automatic-irrigation"><p class="grey-text text-lighten-4 ">GitHub</p></a>
+              </div>
+            </div>
+        </footer>
+<?php }?>
 </body>
 </html>
   <!--  Scripts-->
