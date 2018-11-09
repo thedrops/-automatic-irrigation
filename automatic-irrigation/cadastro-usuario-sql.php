@@ -19,6 +19,7 @@
 
     if($stmt->execute()){
         echo "sucesso";
+        header("Location:index.php");
     }
     else{
         echo "erro";
