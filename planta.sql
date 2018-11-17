@@ -116,12 +116,11 @@ DELIMITER ;
 --
 -- Table structure for table `usuario`
 --
-
 CREATE TABLE `usuario` (
-  `id_usuario` int(11) NOT NULL,
+  `id_usuario` int(11) NOT NULL ,
   `nome_usuario` text NOT NULL,
-  `login_usuario` text NOT NULL,
-  `email` text NOT NULL,
+  `login_usuario` varchar(25) NOT NULL UNIQUE,
+  `email` varchar(25) NOT NULL UNIQUE,
   `endereco` text NOT NULL,
   `senha` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
