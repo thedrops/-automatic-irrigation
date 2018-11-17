@@ -75,13 +75,13 @@ $(document).ready(function(){
         success: function(response){
             if(response == "sucesso"){
             alert("Cadastro realizado com sucesso!");
-        }
-        else{
-            
-            $('#resposta').append("<p class=' red accent-1 blue-text text-darken-2 '>Não foi possivel realizar o cadastro,tente novamente Completo</p>");
-         
-    
-        } 
+            }
+            else if(response == "SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'a' for key 'login_usuario'"){
+             $('#resposta').append("<p class=' red accent-1 blue-text text-darken-2 '>Nome de usuário já existente , por favor escolha outro e tente novamente</p>");
+            } 
+            else{
+                $('#resposta').append("<p class=' red accent-1 blue-text text-darken-2 '>Email já existente , por favor escolha outro e tente novamente</p>");
+            }
     }
 
        });
