@@ -16,13 +16,12 @@
     $stmt->bindParam(':email', $email);
     $stmt->bindParam(':endereco',$endereco);
     $stmt->bindParam(':senha', $senha);
-
-    if($stmt->execute()){
+    
+    try{
+        $stmt->execute();
         echo "sucesso";
-        header("Location:index.php");
-    }
-    else{
-        echo "erro";
+    }catch(PDOException $e){
+        echo  $e->getMessage();
     }
 
 ?>
