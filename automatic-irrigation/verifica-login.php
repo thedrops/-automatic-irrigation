@@ -19,9 +19,9 @@
         exit;
     }
 
-    //tornando a senha em um hash 
+    //tornando a senha em um hash
     $senha = sha1(md5($senha));
-  
+
 
     //pesquisa no banco se a informação está correta
     $PDO = db_connect();
@@ -31,22 +31,21 @@
     $stmt->bindParam(':senha', $senha);
     $stmt->execute();
     $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
- 
+
     if (count($users) == 0)
     {
         echo "Login ou senha incorretos";
         exit;
     }
-    
-    
+
+
     // pega o primeiro usuário
     $user = $users[0];
-    
+
 
     $_SESSION['logged_in'] = true;
     $_SESSION['user_id'] = $user['id_usuario'];
     echo "Logado!";
-
     header("Location:painel.php");
 
 ?>

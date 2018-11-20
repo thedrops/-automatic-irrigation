@@ -1,30 +1,30 @@
 $(document).ready(function(){
 
-    // Delete 
+    // Delete
     $('.delete').click(function(){
      var elemento = this;
      var id = this.id;
-     
- 
+
+
      // AJAX Request
      $.ajax({
       url: 'excluir.php',
       type: 'POST',
       data: { id:id },
       success: function(response){
-   
-       // Removendo a tupla 
+
+       // Removendo a tupla
        $(elemento).closest('tr').css('background','tomato');
-       $(elemento).closest('tr').fadeOut(800, function(){ 
+       $(elemento).closest('tr').fadeOut(800, function(){
        $(this).remove();
        });
-   
+
       }
      });
-   
+
     });
-   
-   
+
+
     $('.cadastro-usuario').click(function(){
         var nomeUsuario =  $("input[type=text][name=nome_usuario]").val();
         var nomeLogin =  $("input[type=text][name=nome_login]").val();
@@ -34,7 +34,7 @@ $(document).ready(function(){
         var validacao= false;
 
         var regExp = /^[\w]+@[\w]+\.[\w|\.]+$/;
-        
+
         $('#resposta').children().remove();
         //Verificando cadastro
         if(nomeUsuario == ""){
@@ -65,7 +65,7 @@ $(document).ready(function(){
             validacao = true;
             $('#resposta').append("<p class=' lime accent-1 blue-text text-darken-2 '> Preencha o campo Endereço</p>");
         }
-    
+
     if(validacao == false){
     // AJAX Request
      $.ajax({
@@ -75,10 +75,11 @@ $(document).ready(function(){
         success: function(response){
             if(response == "sucesso"){
             alert("Cadastro realizado com sucesso!");
+            header("Location:painel.php");
             }
             else if(response == "SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'a' for key 'login_usuario'"){
              $('#resposta').append("<p class=' red accent-1 blue-text text-darken-2 '>Nome de usuário já existente , por favor escolha outro e tente novamente</p>");
-            } 
+            }
             else{
                 $('#resposta').append("<p class=' red accent-1 blue-text text-darken-2 '>Email já existente , por favor escolha outro e tente novamente</p>");
             }

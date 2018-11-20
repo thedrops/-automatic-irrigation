@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: 20-Nov-2018 às 21:41
+-- Generation Time: 20-Nov-2018 às 22:55
 -- Versão do servidor: 5.7.17-log
 -- PHP Version: 5.6.30
 
@@ -44,13 +44,6 @@ CREATE TABLE `plantas` (
   `id_usuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Extraindo dados da tabela `plantas`
---
-
-INSERT INTO `plantas` (`id_planta`, `nome_planta`, `nome_cientifico`, `umidade`, `temperatura`, `id_usuario`) VALUES
-(2, 'Alçafrão', 'Curcuma longa', 52, 35, 3);
-
 -- --------------------------------------------------------
 
 --
@@ -62,14 +55,6 @@ CREATE TABLE `rega` (
   `id_registro` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Extraindo dados da tabela `rega`
---
-
-INSERT INTO `rega` (`id_rega`, `id_registro`) VALUES
-(12, 28),
-(13, 29);
-
 -- --------------------------------------------------------
 
 --
@@ -79,6 +64,7 @@ INSERT INTO `rega` (`id_rega`, `id_registro`) VALUES
 CREATE TABLE `rega_registro` (
 `x` date
 ,`y` int(2)
+,`id_usuario` int(11)
 );
 
 -- --------------------------------------------------------
@@ -96,19 +82,11 @@ CREATE TABLE `registro` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `registro`
---
-
-INSERT INTO `registro` (`id_registro`, `data`, `temperatura`, `umidade`, `id_planta`) VALUES
-(28, '2018-11-19 03:00:00', 55, 10, 2),
-(29, '2018-11-19 05:00:00', 67, 2, 2);
-
---
 -- Acionadores `registro`
 --
 DELIMITER $$
 CREATE TRIGGER `registro_rega` AFTER INSERT ON `registro` FOR EACH ROW BEGIN
-if new.umidade < (select umidade from plantas where id_planta = new.id_planta) THEN
+if new.umidade < ((select umidade from plantas where id_planta = new.id_planta)*0.8) and new.temperatura < ((select temperatura from plantas where id_planta = new.id_planta)*0.8) THEN
 INSERT INTO rega SET
 id_registro = new.id_registro;
 end if;
@@ -131,14 +109,6 @@ CREATE TABLE `usuario` (
   `senha` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Extraindo dados da tabela `usuario`
---
-
-INSERT INTO `usuario` (`id_usuario`, `nome_usuario`, `login_usuario`, `email`, `endereco`, `senha`) VALUES
-(3, 'Pedro', 'pedro', 'pedro@teste.com', 'rua josé', 'adcd7048512e64b48da55b027577886ee5a36350'),
-(6, 'Pedro', 'joao', 'joao@gmail.com', 'sfasbflaksfjlakj', 'adcd7048512e64b48da55b027577886ee5a36350');
-
 -- --------------------------------------------------------
 
 --
@@ -146,7 +116,7 @@ INSERT INTO `usuario` (`id_usuario`, `nome_usuario`, `login_usuario`, `email`, `
 --
 DROP TABLE IF EXISTS `rega_registro`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `rega_registro`  AS  select cast(`registro`.`data` as date) AS `x`,hour(`registro`.`data`) AS `y` from (`registro` join `rega`) where (`rega`.`id_registro` = `registro`.`id_registro`) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `rega_registro`  AS  select cast(`registro`.`data` as date) AS `x`,hour(`registro`.`data`) AS `y`,`plantas`.`id_usuario` AS `id_usuario` from ((`registro` join `rega`) join `plantas`) where ((`rega`.`id_registro` = `registro`.`id_registro`) and (`plantas`.`id_usuario` = `plantas`.`id_usuario`)) ;
 
 --
 -- Indexes for dumped tables
@@ -187,22 +157,22 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT for table `plantas`
 --
 ALTER TABLE `plantas`
-  MODIFY `id_planta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_planta` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `rega`
 --
 ALTER TABLE `rega`
-  MODIFY `id_rega` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_rega` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `registro`
 --
 ALTER TABLE `registro`
-  MODIFY `id_registro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id_registro` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- Constraints for dumped tables
 --
