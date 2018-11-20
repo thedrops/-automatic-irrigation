@@ -2,6 +2,7 @@
 include('include/header.php');
 include('include/nav.php');
 
+
     require_once 'conexao.php';
 
     //inicializar variáveis
@@ -35,12 +36,13 @@ include('include/nav.php');
 
     //inserção de dados no banco
     $PDO = db_connect();
-    $sql = "INSERT INTO plantas(nome_planta,nome_cientifico,umidade,temperatura) VALUES(:nome_planta,:nome_cientifico,:umidade,:temperatura)";
+    $sql = "INSERT INTO plantas(nome_planta,nome_cientifico,umidade,temperatura,id_usuario) VALUES(:nome_planta,:nome_cientifico,:umidade,:temperatura,:id_usuario)";
     $stmt = $PDO->prepare($sql);
     $stmt->bindParam(':nome_planta', $nome_planta);
     $stmt->bindParam(':nome_cientifico', $nome_cientifico);
     $stmt->bindParam(':umidade',$umidade);
     $stmt->bindParam(':temperatura',$temperatura);
+    $stmt->bindParam(':id_usuario',$_SESSION['user_id']);
 
     if($stmt->execute()){
         echo "cadastro efetuado com sucesso";

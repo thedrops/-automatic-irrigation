@@ -5,7 +5,7 @@
     $login = isset($_POST['nome_login']) ? $_POST['nome_login'] : null;
     $endereco = isset($_POST['endereco']) ? $_POST['endereco'] : null;
     $senha =  isset($_POST['senha']) ? $_POST['senha'] : null;
-    
+
     $senha = sha1(md5($senha));
 
     $PDO = db_connect();
