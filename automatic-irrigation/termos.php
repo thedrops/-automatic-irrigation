@@ -112,17 +112,17 @@ include('include/nav.php');
 
     <p><b>1. Informações gerais</b></p>
 
-    <b><p>Essa seção contém informações a respeito do tratamento de dados pessoais do usuário, total ou parcialmente, automatizados ou não, realizado pelo aplicativo e que poderão ou não serem armazenados. O objetivo é fornecer orientações a respeito das informações coletadas, os motivos da coleta e como o usuário poderá atualizar, gerenciar, exportar ou excluir essas informações.</p>
+    <p>Essa seção contém informações a respeito do tratamento de dados pessoais do usuário, total ou parcialmente, automatizados ou não, realizado pelo aplicativo e que poderão ou não serem armazenados. O objetivo é fornecer orientações a respeito das informações coletadas, os motivos da coleta e como o usuário poderá atualizar, gerenciar, exportar ou excluir essas informações.</p>
 
     <p>A política de privacidade do aplicativo está de acordo com a Lei federal n. 12.965 de 23 de abril de 2014 (Marco Civil da Internet), com a Lei federal n. 12.965, de 23 de abril de 2014 (Lei de Proteção de Dados Pessoais) e com o Regulamento UE n. 2016/679 de 27 de abril de 2016 (Regulamento Geral Europeu de Proteção de Dados Pessoais).</p>
 
     <p>Esta política de privacidade poderá ser atualizada em decorrência de uma eventual atualização normativa, razão pela qual se convida o usuário a consultar periodicamente esta seção.</p>
 
-    <p>2. Direitos do usuário</p>
+    <p><b>2. Direitos do usuário</b></p>
 
     <p>O aplicativo se compromete a cumprir as normas dispostas pelo Regulamento Geral Europeu de Proteção de Dados Pessoais (RGPD), em respeito aos seguintes princípios:</p>
 
-    <div class='center-align'><p>Seus dados pessoais serão processados de forma lícita, leal e transparente (licitude, lealdade e transparência);</p>
+    <div class='center-align'><b><p>•Seus dados pessoais serão processados de forma lícita, leal e transparente (licitude, lealdade e transparência);</p>
 
     <p>•Seus dados pessoais serão coletados apenas para finalidades determinadas, explícitas e legítimas, não podendo ser tratados posteriormente de uma forma incompatível com essas finalidades (limitação das finalidades);</p>
 
@@ -132,11 +132,11 @@ include('include/nav.php');
 
     <p>•Seus dados pessoais serão conservados de uma forma que permita a identificação dos titulares dos dados apenas durante o período necessário para as finalidades para as quais são tratados (limitação da conservação);</p>
 
-    <p>•Seus dados pessoais serão tratados de forma segura, protegidos do tratamento não autorizado ou ilícito e contra a sua perda, destruição ou danificação acidental, adotando as medidas técnicas ou organizativas adequadas (integridade e confidencialidade).</p></div>
+    <p>•Seus dados pessoais serão tratados de forma segura, protegidos do tratamento não autorizado ou ilícito e contra a sua perda, destruição ou danificação acidental, adotando as medidas técnicas ou organizativas adequadas (integridade e confidencialidade).</p></b></div>
 
     <p>O usuário do aplicativo possui os seguintes direitos, conferidos pela conferidos pela Lei federal n. 12.965, de 23 de abril de 2014 (Lei de Proteção de Dados Pessoais) e pelo Regulamento Geral Europeu de Proteção de Dados Pessoais (RGPD):</p>
 
-    <div class='center-align'><p>•Direito de confirmação e acesso: é o direito do usuário de obter do aplicativo a confirmação de que os dados pessoais que lhe digam respeito são ou não objeto de tratamento e, se for esse o caso, o direito de acessar os seus dados pessoais;</p>
+    <div class='center-align'><b><p>•Direito de confirmação e acesso: é o direito do usuário de obter do aplicativo a confirmação de que os dados pessoais que lhe digam respeito são ou não objeto de tratamento e, se for esse o caso, o direito de acessar os seus dados pessoais;</p>
 
     <p>•Direito de retificação: é o direito do usuário de obter do aplicativo, sem demora injustificada, a retificação dos dados pessoais inexatos que lhe digam respeito;</p>
 
@@ -148,17 +148,17 @@ include('include/nav.php');
 
     <p>•Direito de portabilidade dos dados: é o direito do usuário de receber os dados pessoais que lhe digam respeito e que tenha fornecido aoaplicativo, num formato estruturado, de uso corrente e de leitura automática, e o direito de transmitir esses dados a outro aplicativo;</p>
 
-    <p>•Direito de não ser submetido a decisões automatizadas: é o direito do usuário de não ficar sujeito a nenhuma decisão tomada exclusivamente com base no tratamento automatizado, incluindo a definição de perfis (profiling), que produza efeitos na sua esfera jurídica ou que o afete significativamente de forma similar.</p></div>
+    <p>•Direito de não ser submetido a decisões automatizadas: é o direito do usuário de não ficar sujeito a nenhuma decisão tomada exclusivamente com base no tratamento automatizado, incluindo a definição de perfis (profiling), que produza efeitos na sua esfera jurídica ou que o afete significativamente de forma similar.</p></b></div>
 
     <p>O usuário poderá exercer os seus direitos por meio de comunicação escrita enviada ao aplicativo com o assunto "RGDP-wettercompany.com", especificando:</p>
 
-    <div class='center-align'><p>•Nome completo ou razão social, número do CPF (Cadastro de Pessoas Físicas, da Receita Federal do Brasil) ou CNPJ (Cadastro Nacional de Pessoa Jurídica, da Receita Federal do Brasil) e endereço de e-mail do usuário e, se for o caso, do seu representante;</p>
+    <div class='center-align'><b><p>•Nome completo ou razão social, número do CPF (Cadastro de Pessoas Físicas, da Receita Federal do Brasil) ou CNPJ (Cadastro Nacional de Pessoa Jurídica, da Receita Federal do Brasil) e endereço de e-mail do usuário e, se for o caso, do seu representante;</p>
 
         <p>•Direito que deseja exercer junto ao aplicativo;</p>
 
         <p>•Data do pedido e assinatura do usuário;</p>
 
-        <p>•Todo documento que possa demonstrar ou justificar o exercício de seu direito.</p></div>
+        <p>•Todo documento que possa demonstrar ou justificar o exercício de seu direito.</p></b></div>
 
     <p>O pedido deverá ser enviado ao e-mail: Company@wetter.com, ou por correio, ao seguinte endereço:</p>
 
@@ -168,9 +168,9 @@ include('include/nav.php');
 
     <p>O usuário será informado em caso de retificação ou eliminação dos seus dados.</p>
 
-    <p>3. Informações coletadas</p>
+    <b><p>3. Informações coletadas</p></b>
 
-        </p>3.1. Tipo de dados coletados</p>
+     <b></p>3.1. Tipo de dados coletados</p></b>
 
     <p>Os dados pessoais coletados pelo aplicativo são apenas aqueles necessários à identificação do usuário, não sendo coletados dados sensíveis do usuário, definidos nos artigos 9º e 10 do Regulamento Geral Europeu de Proteção de Dados Pessoais (RGPD) e do artigo 11 da Lei federal n. 12.965, de 23 de abril de 2014.</p>
 
@@ -180,7 +180,7 @@ include('include/nav.php');
 
     <p>O usuário se compromete a fornecer exclusivamente os seus dados pessoais e não os de terceiros.</p>
 
-    <p>3.2. Fundamento jurídico para o tratamento dos dados pessoais</p>
+    <p><b>3.2. Fundamento jurídico para o tratamento dos dados pessoais</b></p>
 
     <p>Ao utilizar os serviços aplicativo, o usuário está consentindo com o presente termo e com a sua política de privacidade.</p>
 
@@ -194,7 +194,7 @@ include('include/nav.php');
 
     <p>O tratamento de dados pessoais sem o consentimento do usuário apenas será realizado em razão de interesse legítimo ou para as hipóteses previstas em lei, dentre outras, as seguintes:</p>
 
-    <div class='center-align'><p>•para o cumprimento de obrigação legal ou regulatória pelo controlador;</p>
+    <div class='center-align'><b><p>•para o cumprimento de obrigação legal ou regulatória pelo controlador;</p>
 
     <p>•para a realização de estudos por órgão de pesquisa, garantida, sempre que possível, a anonimização dos dados pessoais;</p>
 
@@ -208,9 +208,9 @@ include('include/nav.php');
 
     <p>•quando necessário para atender aos interesses legítimos do controlador ou de terceiro, exceto no caso de prevalecerem direitos e liberdades fundamentais do titular dos dados que exijam a proteção dos dados pessoais;</p>
 
-    <p>•para a proteção do crédito, inclusive quanto ao disposto na legislação pertinente.</p></div>
+    <p>•para a proteção do crédito, inclusive quanto ao disposto na legislação pertinente.</p></b></div>
 
-    <p>3.3. Finalidades do tratamento dos dados pessoais</p>
+    <p><b>3.3. Finalidades do tratamento dos dados pessoais</b></p>
 
     <p>Os dados pessoas do usuário coletados pelo aplicativo têm por finalidade facilitar, agilizar e cumprir os compromissos estabelecidos com o usuário e a fazer cumprir as solicitações realizadas por meio do preenchimento de formulários.</p>
 
@@ -220,7 +220,7 @@ include('include/nav.php');
 
     <p>Se o aplicativo tiver a intenção de tratar os dados pessoais do usuário para outras finalidades ele deverá ser informado sobre as outras finalidades, que deverão ser feitas em observação aos mesmos direitos e obrigações.</p>
 
-    <p>3.4. Prazo de conservação dos dados pessoais</p>
+    <p><b>3.4. Prazo de conservação dos dados pessoais</b></p>
 
     <p>Os dados pessoais do usuário serão conservados por um período não superior ao exigido para cumprir os objetivos em razão dos quais eles são processados.</p>
 
@@ -230,20 +230,20 @@ include('include/nav.php');
 
     <p>Os dados pessoais dos usuários apenas poderão ser conservados após o término de seu tratamento nas seguintes hipóteses:</p>
 
-    <div class='center-align'><p>•para o cumprimento de obrigação legal ou regulatória pelo controlador;</p>
+    <div class='center-align'><b><p>•para o cumprimento de obrigação legal ou regulatória pelo controlador;</p>
 
     <p>•para estudo por órgão de pesquisa, garantida, sempre que possível, a anonimização dos dados pessoais;</p>
 
     <p>•para a transferência a terceiro, desde que respeitados os requisitos de tratamento de dados dispostos na legislação;</p>
 
-    <p>•para uso exclusivo do controlador, vedado seu acesso por terceiro, e desde que anonimizados os dados.</p></div>
+    <p>•para uso exclusivo do controlador, vedado seu acesso por terceiro, e desde que anonimizados os dados.</p></b></div>
 
-    <p>3.5. Destinatários e transferência dos dados pessoais</p>
+    <p><b>3.5. Destinatários e transferência dos dados pessoais</b></p>
     <p>Os dados pessoais do usuário não serão compartilhadas com terceiros, que serão tratados apenas por este aplicativo.</p>
 
-    <p>4. Do tratamento dos dados pessoais</p>
+    <p><b>4. Do tratamento dos dados pessoais</b></p>
 
-    <p>4.1. Do responsável pelo tratamento dos dados (data controller)</p>
+    <p><b>4.1. Do responsável pelo tratamento dos dados (data controller)</b></p>
     <p>O controlador, responsável pelo tratamento dos dados pessoais do usuário, é a pessoa física ou jurídica, a autoridade pública, a agência ou outro organismo que, individualmente ou em conjunto com outras, determina as finalidades e os meios de tratamento de dados pessoais.</p>
 
     <p>Neste aplicativo, o responsável pelo tratamento dos dados pessoais coletados é Wetter Company, representada por Rebeca Castilho Camargo, que poderá ser contactado pelo e-mail: Company@wetter.com ou no endereço:</p>
@@ -259,13 +259,13 @@ include('include/nav.php');
 
     <p>O responsável pelo tratamento dos dados se encarregará diretamente do tratamento dos dados pessoais do usuário.</p>
 
-    <p>4.2. Do encarregado de proteção de dados (data protection officer)</p>
+    <p><b>4.2. Do encarregado de proteção de dados (data protection officer)</b></p>
 
     <p>O encarregado de proteção de dados (data protection officer) é o profissional encarregado de informar, aconselhar e controlar o responsável pelo tratamento dos dados , bem como os trabalhadores que tratem os dados, a respeito das obrigações do aplicativo nos termos do Regulamento Geral Europeu de Proteção de Dados (RGDP), da Lei federal n. 12.965, de 23 de abril de 2014 (Lei de Proteção de Dados Pessoais) e de outras disposições de proteção de dados presentes na legislação nacional e internacional, em cooperação com a autoridade de controle competente.</p>
 
     <p>Neste aplicativo o encarregado de proteção de dados (data protection officer) é Fabiano Pereira Alves e poderá ser contactado pelo e-mail: Fabiano@wetter.com.</p>
 
-    <p>5. Segurança no tratamento dos dados pessoais do usuário</p>
+    <p><b>5. Segurança no tratamento dos dados pessoais do usuário</b></p>
     <p>O aplicativo se compromete a aplicar as medidas técnicas e organizativas adequadas para assegurar um nível de segurança adequado ao risco, tendo em conta as técnicas mais avançadas, os custos de aplicação e a natureza, o âmbito, o contexto e as finalidades do tratamento, bem como os riscos, de probabilidade e gravidade variável, para os direitos e liberdades do usuário.</p>
 
     <p>No entanto, o aplicativo se exime da responsabilidade por culpa exclusiva de terceiro, como em caso de ataque de hackers ou crackers, ou culpa exclusiva do usuário, que, por exemplo, transfere seus dados a terceiro, exceto se a pirataria se deu em razão de falha de segurança do aplicativo. O aplicativo se compromete, ainda, a comunicar o usuário em prazo adequado caso ocorra algum tipo de violação da segurança de seus dados pessoais que possa lhe causar um alto risco para seus direitos e liberdades pessoais.</p>
@@ -274,7 +274,7 @@ include('include/nav.php');
 
     <p>Por fim, o aplicativo se compromete a tratar os dados pessoais do usuário com confidencialidade, dentro dos limites legais.</p>
 
-    <p>6. Reclamação a uma autoridade de controle</p>
+    <p><b>6. Reclamação a uma autoridade de controle</b></p>
     <p>Sem prejuízo de qualquer outra via de recurso administrativo ou judicial, todos os titulares de dados têm direito a apresentar reclamação a uma autoridade de controle. A reclamação poderá ser feita à autoridade da sede do aplicativo, do país de residência habitual do usuário, do seu local de trabalho ou do local onde foi alegadamente praticada a infração.</p></b><br/>
 
 
