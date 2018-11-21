@@ -312,7 +312,7 @@ include('include/nav.php');
     <h5>XIX. DO DIREITO APLICÁVEL E DO FORO</h5>
     <p>Para a solução das controvérsias decorrentes do presente instrumento, será aplicado integralmente o Direito brasileiro, notadamente a sua legislação consumerista.</p>
 
-    <p>Os eventuais litígios deverão ser apresentados no foro da comarca em que se encontra a sede do editor do site.</p>
+    <p>Os eventuais litígios deverão ser apresentados no foro da comarca em que se encontra a sede do editor do site.</p><br/>
 
 
     <div class='center-align'><p><i>Seja bem-vindo(a)!</p>

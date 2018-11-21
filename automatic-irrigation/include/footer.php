@@ -29,10 +29,10 @@ if(!$_SESSION){ ?>
  <footer class="page-footer teal ">
             <div class="row conta container">
               <div class="col l6 s12">
-                <p class="grey-text text-lighten-4">Você pode conferir o nosso repositório.</p>
+                <a href="https://github.com/thedrops/-automatic-irrigation"><p class="grey-text text-lighten-4 ">Você pode conferir o nosso repositório aqui.</p></a>
               </div>
               <div class="col l4 offset-l2 s12 container">
-                  <a href="https://github.com/thedrops/-automatic-irrigation"><p class="grey-text text-lighten-4 ">GitHub</p></a>
+                  <a href="termos.php"><p class="grey-text text-lighten-4 ">Termos de Uso e Privacidade</p></a>
               </div>
             </div>
         </footer>
@@ -40,10 +40,10 @@ if(!$_SESSION){ ?>
  <footer class="page-footer teal " style="margin-left:20%;">
             <div class="row conta container">
               <div class="col l6 s12">
-                <p class="grey-text text-lighten-4">Você pode conferir o nosso repositório.</p>
+                <a href="https://github.com/thedrops/-automatic-irrigation"><p class="grey-text text-lighten-4 ">Você pode conferir o nosso repositório aqui.</p></a>
               </div>
               <div class="col l4 offset-l2 s12 container">
-                  <a href="https://github.com/thedrops/-automatic-irrigation"><p class="grey-text text-lighten-4 ">GitHub</p></a>
+                  <a href="termos.php"><p class="grey-text text-lighten-4 ">Termos de Uso e Privacidade</p></a>
               </div>
             </div>
         </footer>
