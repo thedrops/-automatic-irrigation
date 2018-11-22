@@ -40,7 +40,7 @@
                   <label for="endereco" class='black-text'><b>Endereço</b></label>
                 </div>
           </div>
-          <p><b>Ao Solicitar você condiz com os termos de uso oferecidos pela empresa </b></p>
+        <p><b>Ao solicitar você condiz com os <a href="termos.php">TERMOS E CONDIÇÕES GERAIS DE USO</a> oferecidos pela empresa. </b></p>
 
 
             <button class="btn waves-effect waves-light right cadastro-usuario" >Solicitar
