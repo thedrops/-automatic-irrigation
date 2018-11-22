@@ -40,6 +40,8 @@
                   <label for="endereco" class='black-text'><b>Endereço</b></label>
                 </div>
           </div>
+          <p><b>Ao Solicitar você condiz com os termos de uso oferecidos pela empresa </b></p>
+
 
             <button class="btn waves-effect waves-light right cadastro-usuario" >Solicitar
                 <i class="material-icons right">check</i>

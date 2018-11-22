@@ -11,7 +11,7 @@ include('include/nav.php');
         <br><br>
         <h1 class="header center white-text text-lighten-2">Monitore seu plantio</h1>
         <div class="row center">
-          <h5 class="header col s12 " >Plataforma de controle de irrigação de precisão</h5>
+          <h5 class="header col s12 " >Plataforma de monitoramento de irrigação</h5>
         </div>
         <div class="row center">
           <a href="cadastro-usuario.php"  class=" btn-large teal" >Confira</a>
@@ -42,8 +42,7 @@ include('include/nav.php');
           <div class="icon-block">
           <h2 class="center blue-text"><i class="material-icons">attach_money</i></h2>
             <h5 class="center">Baixo Custo</h5>
-
-            <p>Tecnologia de ponta de baixo custo e alta eficiência, espera por você através do projeto WETTER. Implante esse sistema e tenha retorno em menos de 6 meses. Garantido!!!</p>
+            <p style="text-align:justify">Tecnologia de ponta de baixo custo e alta eficiência, espera por você através do projeto WETTER. Implante esse sistema e tenha retorno em menos de 6 meses. Garantido!!!</p>
           </div>
         </div>
 
@@ -51,7 +50,6 @@ include('include/nav.php');
           <div class="icon-block">
             <h2 class="center blue-text"><i class="material-icons">brush</i></h2>
             <h5 class="center">Customização</h5>
-
             <p style="text-align:justify">O Sistema vai permitir a adção de novas funções, como sistema autônomo de energia ou alternar o tipo de alimentação baseado na pressão da água.</p>
           </div>
         </div>
