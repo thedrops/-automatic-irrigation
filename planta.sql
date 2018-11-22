@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.6
+-- version 4.8.2
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: 20-Nov-2018 às 22:55
--- Versão do servidor: 5.7.17-log
--- PHP Version: 5.6.30
+-- Host: 127.0.0.1
+-- Generation Time: 22-Nov-2018 às 21:50
+-- Versão do servidor: 10.1.34-MariaDB
+-- PHP Version: 7.2.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -19,6 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `planta`
 --
+CREATE DATABASE IF NOT EXISTS `planta` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+USE `planta`;
 
 DELIMITER $$
 --
@@ -35,14 +39,23 @@ DELIMITER ;
 -- Estrutura da tabela `plantas`
 --
 
-CREATE TABLE `plantas` (
-  `id_planta` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `plantas` (
+  `id_planta` int(11) NOT NULL AUTO_INCREMENT,
   `nome_planta` text NOT NULL,
   `nome_cientifico` text NOT NULL,
   `umidade` int(11) NOT NULL,
   `temperatura` int(11) NOT NULL,
-  `id_usuario` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `id_usuario` int(11) NOT NULL,
+  PRIMARY KEY (`id_planta`),
+  KEY `id_usuario` (`id_usuario`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `plantas`
+--
+
+INSERT INTO `plantas` (`id_planta`, `nome_planta`, `nome_cientifico`, `umidade`, `temperatura`, `id_usuario`) VALUES
+(1, 'Morango', 'Fragaria', 40, 25, 1);
 
 -- --------------------------------------------------------
 
@@ -50,10 +63,20 @@ CREATE TABLE `plantas` (
 -- Estrutura da tabela `rega`
 --
 
-CREATE TABLE `rega` (
-  `id_rega` int(11) NOT NULL,
-  `id_registro` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE IF NOT EXISTS `rega` (
+  `id_rega` int(11) NOT NULL AUTO_INCREMENT,
+  `id_registro` int(11) NOT NULL,
+  PRIMARY KEY (`id_rega`),
+  KEY `id_registro` (`id_registro`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `rega`
+--
+
+INSERT INTO `rega` (`id_rega`, `id_registro`) VALUES
+(1, 1),
+(2, 5);
 
 -- --------------------------------------------------------
 
@@ -61,7 +84,7 @@ CREATE TABLE `rega` (
 -- Stand-in structure for view `rega_registro`
 -- (See below for the actual view)
 --
-CREATE TABLE `rega_registro` (
+CREATE TABLE IF NOT EXISTS `rega_registro` (
 `x` date
 ,`y` int(2)
 ,`id_usuario` int(11)
@@ -73,13 +96,27 @@ CREATE TABLE `rega_registro` (
 -- Estrutura da tabela `registro`
 --
 
-CREATE TABLE `registro` (
-  `id_registro` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `registro` (
+  `id_registro` int(11) NOT NULL AUTO_INCREMENT,
   `data` datetime NOT NULL,
   `temperatura` int(11) NOT NULL,
   `umidade` int(11) NOT NULL,
-  `id_planta` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `id_planta` int(11) NOT NULL,
+  PRIMARY KEY (`id_registro`),
+  KEY `registro_planta` (`id_planta`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `registro`
+--
+
+INSERT INTO `registro` (`id_registro`, `data`, `temperatura`, `umidade`, `id_planta`) VALUES
+(1, '2018-11-21 10:00:00', 15, 26, 1),
+(2, '2018-11-22 18:41:24', 20, 30, 1),
+(3, '2018-11-23 16:00:00', 24, 20, 1),
+(4, '2018-11-24 14:00:00', 25, 15, 1),
+(5, '2018-11-25 16:00:00', 19, 15, 1),
+(6, '2018-11-26 14:00:00', 30, 15, 1);
 
 --
 -- Acionadores `registro`
@@ -100,14 +137,22 @@ DELIMITER ;
 -- Estrutura da tabela `usuario`
 --
 
-CREATE TABLE `usuario` (
-  `id_usuario` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `usuario` (
+  `id_usuario` int(11) NOT NULL AUTO_INCREMENT,
   `nome_usuario` text NOT NULL,
   `login_usuario` text NOT NULL,
   `email` text NOT NULL,
   `endereco` text NOT NULL,
-  `senha` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `senha` text NOT NULL,
+  PRIMARY KEY (`id_usuario`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `usuario`
+--
+
+INSERT INTO `usuario` (`id_usuario`, `nome_usuario`, `login_usuario`, `email`, `endereco`, `senha`) VALUES
+(1, 'Fabiano Alves', 'Mithrarin', 'fabiano@wetter.com', ' Av. Bahia, 1739 - Indaiá, Caraguatatuba - SP', '756cfc1cf9f7f9936d39118b3327579ce63318b9');
 
 -- --------------------------------------------------------
 
@@ -118,61 +163,6 @@ DROP TABLE IF EXISTS `rega_registro`;
 
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `rega_registro`  AS  select cast(`registro`.`data` as date) AS `x`,hour(`registro`.`data`) AS `y`,`plantas`.`id_usuario` AS `id_usuario` from ((`registro` join `rega`) join `plantas`) where ((`rega`.`id_registro` = `registro`.`id_registro`) and (`plantas`.`id_usuario` = `plantas`.`id_usuario`)) ;
 
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `plantas`
---
-ALTER TABLE `plantas`
-  ADD PRIMARY KEY (`id_planta`),
-  ADD KEY `id_usuario` (`id_usuario`);
-
---
--- Indexes for table `rega`
---
-ALTER TABLE `rega`
-  ADD PRIMARY KEY (`id_rega`),
-  ADD KEY `id_registro` (`id_registro`);
-
---
--- Indexes for table `registro`
---
-ALTER TABLE `registro`
-  ADD PRIMARY KEY (`id_registro`),
-  ADD KEY `registro_planta` (`id_planta`);
-
---
--- Indexes for table `usuario`
---
-ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`id_usuario`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `plantas`
---
-ALTER TABLE `plantas`
-  MODIFY `id_planta` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `rega`
---
-ALTER TABLE `rega`
-  MODIFY `id_rega` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `registro`
---
-ALTER TABLE `registro`
-  MODIFY `id_registro` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `usuario`
---
-ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- Constraints for dumped tables
 --
@@ -194,6 +184,7 @@ ALTER TABLE `rega`
 --
 ALTER TABLE `registro`
   ADD CONSTRAINT `registro_planta` FOREIGN KEY (`id_planta`) REFERENCES `plantas` (`id_planta`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
